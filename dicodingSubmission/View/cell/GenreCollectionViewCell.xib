@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GenreCollectionViewCell" customModule="dicodingSubmission" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HlL-dh-PnR">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adventure" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URl-Od-yoO">
+                                <rect key="frame" x="10" y="10" width="80" height="10"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.37647058820000001" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="URl-Od-yoO" secondAttribute="trailing" constant="10" id="1vH-dj-YtG"/>
+                            <constraint firstItem="URl-Od-yoO" firstAttribute="top" secondItem="HlL-dh-PnR" secondAttribute="top" constant="10" id="5fO-Kn-uBz"/>
+                            <constraint firstItem="URl-Od-yoO" firstAttribute="leading" secondItem="HlL-dh-PnR" secondAttribute="leading" constant="10" id="Xr4-2c-3sd"/>
+                            <constraint firstAttribute="bottom" secondItem="URl-Od-yoO" secondAttribute="bottom" constant="10" id="ubq-7l-Fd1"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="HlL-dh-PnR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="OQK-7U-3TX"/>
+                <constraint firstAttribute="bottom" secondItem="HlL-dh-PnR" secondAttribute="bottom" id="gYW-eK-5i9"/>
+                <constraint firstAttribute="trailing" secondItem="HlL-dh-PnR" secondAttribute="trailing" id="ouo-0z-wUH"/>
+                <constraint firstItem="HlL-dh-PnR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="x5V-bb-Mhy"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="100" height="30"/>
+            <connections>
+                <outlet property="genreName" destination="URl-Od-yoO" id="6DU-hZ-BKB"/>
+                <outlet property="genreView" destination="HlL-dh-PnR" id="HnT-Ph-OdW"/>
+            </connections>
+            <point key="canvasLocation" x="-17.39130434782609" y="115.84821428571428"/>
+        </collectionViewCell>
+    </objects>
+</document>

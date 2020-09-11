@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var gameCollectionView: UICollectionView!
     
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     var components = URLComponents(string: "https://api.rawg.io/api/games")!
     var gamedata = [GameData]()
     var loader = ImageLoader()
@@ -19,7 +20,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        loading.startAnimating()
         gameCollectionView.dataSource = self
         gameCollectionView.delegate = self
         gameCollectionView.isUserInteractionEnabled = true
@@ -57,6 +58,10 @@ class ViewController: UIViewController {
         }
         
         DispatchQueue.main.async {
+            if self.loading.isHidden == false{
+                self.loading.stopAnimating()
+                self.loading.isHidden = true
+            }
             self.gameCollectionView.reloadData()
         }
     }

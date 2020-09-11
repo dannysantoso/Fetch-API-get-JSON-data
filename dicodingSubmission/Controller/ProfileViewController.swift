@@ -13,6 +13,17 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var job: UILabel!
     @IBOutlet weak var nameProfile: UILabel!
     @IBOutlet weak var imageProfile: UIImageView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        Profile.synchronize()
+        if Profile.name.isEmpty == false{
+            nameProfile.text = Profile.name
+        }
+        if Profile.profession.isEmpty == false{
+            job.text = Profile.profession
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,6 +45,9 @@ class ProfileViewController: UIViewController {
             guard let job = alert.textFields?[1].text else { return }
             self.nameProfile.text = name
             self.job.text = job
+            
+            Profile.name = name
+            Profile.profession = job
         }
         alert.addAction(cancel)
         alert.addAction(post)

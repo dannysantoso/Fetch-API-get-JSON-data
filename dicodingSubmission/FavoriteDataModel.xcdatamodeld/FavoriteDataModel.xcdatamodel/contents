@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Favorite" representedClassName="Favorite" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="ratting" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="genre" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="FavoriteGenre" inverseName="favoriteOf" inverseEntity="FavoriteGenre"/>
+        <relationship name="screenshot" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="FavoriteScreenshot" inverseName="favoriteOf" inverseEntity="FavoriteScreenshot"/>
+    </entity>
+    <entity name="FavoriteGenre" representedClassName="FavoriteGenre" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="favoriteOf" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Favorite" inverseName="genre" inverseEntity="Favorite"/>
+    </entity>
+    <entity name="FavoriteScreenshot" representedClassName="FavoriteScreenshot" syncable="YES" codeGenerationType="class">
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="favoriteOf" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Favorite" inverseName="screenshot" inverseEntity="Favorite"/>
+    </entity>
+    <elements>
+        <element name="Favorite" positionX="-422.12109375" positionY="-62.66796875" width="128" height="133"/>
+        <element name="FavoriteGenre" positionX="-135.27734375" positionY="-72.01171875" width="128" height="73"/>
+        <element name="FavoriteScreenshot" positionX="-650.203125" positionY="-25.99609375" width="128" height="73"/>
+    </elements>
+</model>

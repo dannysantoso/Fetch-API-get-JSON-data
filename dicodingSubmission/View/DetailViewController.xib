@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="dicodingSubmission" customModuleProvider="target">
             <connections>
                 <outlet property="activityIndicator" destination="7gQ-mu-u8e" id="w9p-dK-C5s"/>
+                <outlet property="favoriteBtn" destination="7t4-M9-91P" id="6Tz-hf-ag0"/>
                 <outlet property="gameImage" destination="Uoa-WA-AVy" id="So1-7A-rzR"/>
                 <outlet property="gameRating" destination="290-We-lHk" id="ppU-N3-PzL"/>
                 <outlet property="gameReleaseDate" destination="7Rb-Yy-nc8" id="bYx-ZK-XZT"/>
@@ -24,7 +25,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uoa-WA-AVy">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uoa-WA-AVy">
                     <rect key="frame" x="20" y="54" width="374" height="250"/>
                     <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
@@ -105,6 +106,18 @@
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="srQ-3C-hjh"/>
                     </constraints>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7t4-M9-91P">
+                    <rect key="frame" x="353" y="65.5" width="31" height="27.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="31" id="NdP-vj-qUX"/>
+                        <constraint firstAttribute="height" constant="30" id="OJm-Ox-B4e"/>
+                    </constraints>
+                    <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" backgroundImage="heart" catalog="system"/>
+                    <connections>
+                        <action selector="favoriteBtn:" destination="-1" eventType="touchUpInside" id="jY0-zR-aMe"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -121,6 +134,8 @@
                 <constraint firstItem="7Rb-Yy-nc8" firstAttribute="top" secondItem="gXN-Gh-OrD" secondAttribute="bottom" constant="10" id="NMa-Lf-WQf"/>
                 <constraint firstItem="eiI-2i-6Gi" firstAttribute="centerY" secondItem="290-We-lHk" secondAttribute="centerY" id="Owp-fQ-7Qh"/>
                 <constraint firstItem="d7T-Rn-uMO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="SHv-5w-kMm"/>
+                <constraint firstItem="7t4-M9-91P" firstAttribute="top" secondItem="Uoa-WA-AVy" secondAttribute="top" constant="10" id="UUK-Gc-wJo"/>
+                <constraint firstItem="7t4-M9-91P" firstAttribute="trailing" secondItem="Uoa-WA-AVy" secondAttribute="trailing" constant="-10" id="V2R-mN-YZT"/>
                 <constraint firstItem="290-We-lHk" firstAttribute="top" secondItem="Uoa-WA-AVy" secondAttribute="bottom" constant="30" id="YAO-Uz-JIW"/>
                 <constraint firstItem="7gQ-mu-u8e" firstAttribute="height" secondItem="Uoa-WA-AVy" secondAttribute="height" multiplier="0.351351" id="Yap-T1-Nh8"/>
                 <constraint firstItem="90D-tY-KbG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="aBj-ah-ZWI"/>
@@ -141,6 +156,7 @@
         </view>
     </objects>
     <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
     </resources>
 </document>
